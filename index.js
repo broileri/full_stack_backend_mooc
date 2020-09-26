@@ -15,6 +15,9 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms :b
 /* ========== CORS settings ========== */
 app.use(cors());
 
+/* ========== Display front end ========== */
+app.use(express.static('build'));
+
 
 
 /* ========== "Database" :D ========== */
