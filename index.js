@@ -89,6 +89,7 @@ app.put('/api/persons/:id', (request, response, next) => {
         number: body.number,
     };
 
+    // Validators do not work on findByIdAndUpdate - whoops!
     Person.findByIdAndUpdate(id, person, { new: true })
         .then(updatedPerson => {
             response.json(updatedPerson);
